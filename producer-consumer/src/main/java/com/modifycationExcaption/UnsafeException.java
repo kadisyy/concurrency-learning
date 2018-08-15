@@ -27,6 +27,15 @@ public class UnsafeException {
         return list;
     }
 
+    public Collection<String> safe1(Vector<String> list){
+       for (int i = 0;  i < list.size(); i++){
+           if ("31".equals(list.get(i))){
+               list.remove(i);
+           }
+       }
+        return list;
+    }
+
     public static void main(String[] args) {
         Vector vector = new Vector<>();
         vector.add("11");
@@ -36,9 +45,8 @@ public class UnsafeException {
         vector.add("51");
 
         UnsafeException unsafeException = new UnsafeException();
-        Collection<String> res = unsafeException.safe(vector);
+        Collection<String> res = unsafeException.safe1(vector);
         System.out.println(res.toString());
 
-        HashMap map = new HashMap();
     }
 }
