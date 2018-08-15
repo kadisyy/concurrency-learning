@@ -2,6 +2,7 @@ package com.modifycationExcaption;
 
 
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Vector;
 
@@ -37,5 +38,7 @@ public class UnsafeException {
         UnsafeException unsafeException = new UnsafeException();
         Collection<String> res = unsafeException.safe(vector);
         System.out.println(res.toString());
+
+        HashMap map = new HashMap();
     }
 }
