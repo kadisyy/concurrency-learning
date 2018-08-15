@@ -9,13 +9,10 @@
 多线程执行的时，如果使用volatile，可以进行通信等
 
 ## lock与synchronized 
-synchronized能够把任何一个非null对象当成锁，实现由两种方式：
-　　a.当synchronized作用于非静态方法时，锁住的是当前对象的事例，当synchronized作用于静态方法时，锁住的是class实例，又因为Class的相关数据存储在永久带，因此静态方法锁相当于类的一个全局锁。
+synchronized能够把任何一个非null对象当成锁，实现由两种方式：  
 
-　　b.当synchronized作用于一个对象实例时，锁住的是对应的代码块。
-
-　　2.synchronized锁又称为对象监视器（object）。
-    3.当多个线程一起访问某个对象监视器的时候，对象监视器会将这些请求存储在不同的容器中。
+a.当synchronized作用于非静态方法时，锁住的是当前对象的事例，当synchronized作用于静态方法时，锁住的是class实例，又因为Class的相关数据存储在永久带，因此静态方法锁相当于类的一个全局锁。    
+b.当synchronized作用于一个对象实例时，锁住的是对应的代码块。
 
 ```
 public void test() {
