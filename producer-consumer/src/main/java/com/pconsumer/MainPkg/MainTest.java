@@ -1,7 +1,7 @@
-package com.MainPkg;
+package com.pconsumer.MainPkg;
 
-import com.consumer.ConsumerForVolatile;
-import com.producer.ProducerForVolatile;
+import com.pconsumer.consumer.ConsumerForVolatile;
+import com.pconsumer.producer.ProducerForVolatile;
 
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.ExecutorService;

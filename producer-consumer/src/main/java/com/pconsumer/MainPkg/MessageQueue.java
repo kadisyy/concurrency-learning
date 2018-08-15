@@ -1,7 +1,7 @@
-package com.MainPkg;
+package com.pconsumer.MainPkg;
 
-import com.consumer.Consumer;
-import com.producer.Producer;
+import com.pconsumer.consumer.Consumer;
+import com.pconsumer.producer.Producer;
 
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;

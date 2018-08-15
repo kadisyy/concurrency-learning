@@ -1,4 +1,4 @@
-package com.consumer;
+package com.pconsumer.consumer;
 
 import java.util.Random;
 import java.util.concurrent.BlockingQueue;
