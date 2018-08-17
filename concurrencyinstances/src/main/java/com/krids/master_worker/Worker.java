@@ -5,26 +5,33 @@ import java.util.concurrent.*;
 /**
  * 接受master发过来的任务
  */
-public class Worker {
+public class Worker implements Runnable {
     private static ExecutorService service = Executors.newFixedThreadPool(10);
 
-    public static void main(String[] args) throws InterruptedException {
+    @Override
+    public void run() {
         Job job;
         while(true){
-            System.out.println("waiting");
+
             if(CommonUtils.getInstanceQueue().size() > 0) {
                 job = CommonUtils.getInstanceQueue().poll();
                 try{
-                    CommonUtils.getInstanceMap().putIfAbsent(Thread.currentThread().getName(), service.submit(job).get(3, TimeUnit.SECONDS).toString());
+                    System.out.println("result = " + service.submit(job).get(1, TimeUnit.SECONDS).toString());
+                    CommonUtils.getInstanceMap().putIfAbsent(Thread.currentThread().getName(), service.submit(job).get(1, TimeUnit.SECONDS).toString());
+                    //Doing SomeThing
                     Thread.sleep(1000L);
                     System.out.println("ending");
                 } catch(Exception e) {
                     e.printStackTrace();
                 }
+            } else{
+                System.out.println("waiting");
             }
-            Thread.sleep(5000L);
+            try{
+                Thread.sleep(1000L);
+            } catch(InterruptedException e) {
+                e.printStackTrace();
+            }
         }
-
-
     }
 }
