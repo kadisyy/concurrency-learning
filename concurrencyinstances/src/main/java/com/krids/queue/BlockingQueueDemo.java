@@ -30,7 +30,6 @@ public class BlockingQueueDemo {
 //                System.out.println( blockingQueue.take());
 //                System.out.println("循环：" + blockingQueue.size());
 //            }
-
             while(blockingQueue.size() >= 0){
                 //实际打印1，2，3 然后10后继续执行
                 System.out.println( blockingQueue.poll(10,TimeUnit.SECONDS));
